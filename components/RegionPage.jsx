@@ -4,7 +4,7 @@ import CountryCard from './CountryCard'
 const RegionPage = async ({ params }) => {
 
     const fetchCountries = async () => {
-        const res = await fetch(`https://restcountries.com/v3.1/region/${params.region}`)
+        const res = await fetch(`https://restcountries.com/v3.1/region/${params.region}`, { cache: 'no-store' })
         return res.json()
     }
     const data = await fetchCountries()

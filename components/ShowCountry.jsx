@@ -6,7 +6,7 @@ import { FaMapMarkedAlt } from "react-icons/fa"
 const ShowCountry = async ({ params }) => {
 
     const fetchCountry = async () => {
-        const res = await fetch(`https://restcountries.com/v3.1/alpha/${params.country}`)
+        const res = await fetch(`https://restcountries.com/v3.1/alpha/${params.country}`, { cache: 'no-store' })
         return res.json()
     }
 
