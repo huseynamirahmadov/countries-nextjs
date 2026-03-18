@@ -15,7 +15,7 @@ const ShowCountry = async ({ params }) => {
     return (
         <div className='my-5 border-black border-y-2'>
             {
-                data.map((country, i) => {
+                Array.isArray(data) ? data.map((country, i) => {
                     return (
                         <div className='flex flex-col items-center' key={i}>
                             <div className='flex justify-center pt-4'>
@@ -49,20 +49,20 @@ const ShowCountry = async ({ params }) => {
                             <div className='py-4'>
                                 <div className='font-bold text-2xl text-center'>Borders</div>
                                 <div className='flex gap-2 justify-center items-center'>
-                                {
-                                    country?.borders ? country?.borders?.map((border, i) => {
-                                        return (
-                                            <div className='' key={i}>
-                                                <Link href={`/country/${border}`}>{border}</Link>
-                                            </div>
-                                        )
-                                    }) : 'There are no borders'
-                                }
+                                    {
+                                        Array.isArray(country?.borders) ? country.borders.map((border, i) => {
+                                            return (
+                                                <div className='' key={i}>
+                                                    <Link href={`/country/${border}`}>{border}</Link>
+                                                </div>
+                                            )
+                                        }) : 'There are no borders'
+                                    }
                                 </div>
                             </div>
                         </div>
                     )
-                })
+                }) : null
             }
         </div>
     )

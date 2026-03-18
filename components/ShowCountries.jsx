@@ -9,17 +9,17 @@ const ShowCountries = async () => {
     }
     const data = await fetchCountries()
 
-  return (
-    <div className='flex flex-wrap justify-center items-center gap-2 py-4'>
-        {
-            data?.map((country, i) => {
-                return(
-                    <CountryCard key={i} country={country} />
-                )
-            })
-        }
-    </div>
-  )
+    return (
+        <div className='flex flex-wrap justify-center items-center gap-2 py-4'>
+            {
+                Array.isArray(data) ? data.map((country, i) => {
+                    return (
+                        <CountryCard key={i} country={country} />
+                    )
+                }) : null
+            }
+        </div>
+    )
 }
 
 export default ShowCountries

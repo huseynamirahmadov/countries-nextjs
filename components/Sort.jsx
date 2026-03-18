@@ -3,7 +3,7 @@ import SortButton from './SortButton'
 import GeneralButton from './GeneralButton'
 
 const Sort = ({ data }) => {
-  const regions = [...new Set(data.map(item => item.region))]
+  const regions = [...new Set(Array.isArray(data) ? data.map(item => item.region) : [])]
 
   return (
     <div>
