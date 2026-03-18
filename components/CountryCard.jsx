@@ -8,7 +8,7 @@ import TextClip from '../utils/TextClip'
 const CountryCard = ({ country }) => {
 
     return (
-        <Link href={`/country/${country.cca2}`}>
+        <Link href={`/country/${country.cca3}`}>
             <div className='border-2 border-black flex flex-col justify-between items-center p-4 cursor-pointer'>
                 <div className='w-[250px] h-[150px]  relative'>
                     <Image className='object-cover' fill src={country?.flags?.png} alt={country?.flags?.alt} />
