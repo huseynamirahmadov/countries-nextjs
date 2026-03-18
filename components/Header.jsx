@@ -4,7 +4,7 @@ import Sort from './Sort'
 const Header = async () => {
 
   const fetchCountries = async () => {
-    const res = await fetch('https://restcountries.com/v3.1/all', { cache: 'no-store' })
+    const res = await fetch('https://restcountries.com/v3.1/all?fields=name,capital,flags,region,unMember,cca3,borders,population,maps', { cache: 'no-store' })
     return res.json()
   }
   const data = await fetchCountries()
